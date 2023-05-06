@@ -1,0 +1,8 @@
+url="https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/"
+from bs4 import BeautifulSoup
+import requests
+response=requests.get(url)
+soup=BeautifulSoup(response.text, "html.parser")
+temp=soup.find_all(name="h3",class_="title")
+for t in temp:
+    print(t.text)
